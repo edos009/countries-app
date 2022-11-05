@@ -7,7 +7,7 @@
     @extend %container;
 
     .home_inner {
-      .home_title{
+      .home_title {
         margin-top: 15px;
 
         font-weight: 700;
@@ -16,12 +16,32 @@
         text-transform: uppercase;
         text-align: center;
       }
+
+      .home_btn_go {
+        display: block;
+
+        padding: 12px 60px;
+        border: none;
+        border-radius: 3px;
+        margin: 35px auto 0;
+
+        cursor: pointer;
+
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 1.2em;
+        text-transform: uppercase;
+      }
     }
   }
 }
 
 .bg_light_theme {
   @extend %bg_light_theme;
+}
+
+.bg_dark_theme {
+  @extend %bg_dark_theme;
 }
 
 .color_light_theme {
