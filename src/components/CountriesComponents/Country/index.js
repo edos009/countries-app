@@ -1,6 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import CONSTANTS from "../../../constants";
 import {
@@ -20,6 +21,7 @@ const Country = (props) => {
   const dispatch = useDispatch();
 
   const { name, flags, population, region, capital } = props.country;
+  const navigateCountry = useNavigate();
 
   const valueChecked = checkedCountries.includes(name);
 
@@ -32,7 +34,10 @@ const Country = (props) => {
   });
 
   return (
-    <article className={stylesCountryCard}>
+    <article
+      className={stylesCountryCard}
+      onClick={() => navigateCountry(`/countries/${name.toLowerCase()}`)}
+    >
       <div className={styles.card_box_img}>
         <img className={styles.card_img} src={flags.png} alt={name} />
       </div>

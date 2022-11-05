@@ -5,3 +5,5 @@ const httpClient = axios.create({
 });
 
 export const getCountries = () => httpClient.get("/all");
+
+export const getCountry = (countryId) => httpClient.get(`/name/${countryId}`);
