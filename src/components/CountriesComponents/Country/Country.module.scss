@@ -1,0 +1,149 @@
+@import "../../../common/styles/colors";
+@import "../../../common/styles/template";
+
+.card {
+  flex-basis: 395px;
+
+  border-radius: 3px;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+
+  &:hover > &_box_info > &_control_box {
+    opacity: 1;
+  }
+
+  &_box_img {
+    width: 90%;
+    height: 220px;
+
+    margin: 20px auto;
+
+    .card_img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &_box_info {
+    position: relative;
+    margin: 0 20px 20px;
+
+    .card_name,
+    .card_capital,
+    .card_region,
+    .card_population {
+      margin-bottom: 2px;
+
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.2em;
+    }
+
+    .card_capital span,
+    .card_region span,
+    .card_population span {
+      font-weight: 700;
+      border-bottom: 3px solid;
+    }
+
+    .card_name {
+      min-height: 65px;
+      margin-bottom: 5px;
+
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.2em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+
+  &_control_box {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+
+    .card_checkbox_label {
+      content: "";
+      position: relative;
+
+      padding-right: 30px;
+      margin-bottom: 2px;
+
+      cursor: pointer;
+
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 1.2em;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+
+        border-radius: 3px;
+      }
+
+      &::after {
+        width: 25px;
+        height: 25px;
+
+        top: 3px;
+        right: 0;
+
+        background-color: #fff;
+      }
+    }
+
+    .card_btn_remove {
+      position: absolute;
+      bottom: -3px;
+      right: 0;
+
+      padding: 5px 15px;
+      border: none;
+      border-radius: 3px;
+
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+
+  &_control_box_active {
+    opacity: 1;
+  }
+}
+
+.card_checkbox {
+  display: none;
+  &:checked + &_label::before {
+    width: 17px;
+    height: 17px;
+
+    z-index: 99;
+
+    top: 7px;
+    right: 4px;
+
+    background-color: #222;
+  }
+}
+
+.bg_light_theme {
+  @extend %bg_light_theme;
+}
+
+.bg_dark_theme {
+  @extend %bg_dark_theme;
+}
+
+.color_light_theme {
+  @extend %color_dark_theme;
+}
+
+.color_dark_theme {
+  @extend %color_light_theme;
+}

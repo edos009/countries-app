@@ -1,0 +1,78 @@
+@import "../../../common/styles/colors";
+@import "../../../common/styles/template";
+
+.countries {
+  flex-grow: 1;
+  .container {
+    @extend %container;
+
+    .countries_inner {
+      .countries_title {
+        margin-top: 15px;
+
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .countries_search_box {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+
+        margin: 20px 0 30px auto;
+
+        .countries_input,
+        .countries_btn_reset {
+          display: block;
+
+          padding: 15px;
+          border: none;
+          border-radius: 3px;
+
+          outline: none;
+
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 1.2em;
+        }
+
+        .countries_input {
+          max-width: 400px;
+          width: 100%;
+        }
+
+        .countries_btn_reset {
+          cursor: pointer;
+
+          text-transform: uppercase;
+        }
+      }
+
+      .countries_list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+    }
+  }
+}
+
+.bg_light_theme {
+  @extend %bg_light_theme;
+}
+
+.bg_dark_theme {
+  @extend %bg_dark_theme;
+}
+
+.color_light_theme {
+  @extend %color_dark_theme;
+}
+
+.color_dark_theme {
+  @extend %color_light_theme;
+}
