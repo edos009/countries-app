@@ -9,6 +9,22 @@
 
   cursor: pointer;
 
+  @media (max-width: 1230px) {
+    flex-basis: 350px;
+  }
+
+  @media (max-width: 1099px) {
+    flex-basis: 420px;
+  }
+
+  @media (max-width: 880px) {
+    flex-basis: 350px;
+  }
+
+  @media (max-width: 740px) {
+    flex-basis: 450px;
+  }
+
   &:hover > &_box_info > &_control_box {
     opacity: 1;
   }
@@ -18,6 +34,10 @@
     height: 220px;
 
     margin: 20px auto;
+
+    @media (max-width: 420px) {
+      height: 180px;
+    }
 
     .card_img {
       width: 100%;

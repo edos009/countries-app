@@ -28,7 +28,7 @@ const Footer = () => {
       <div className={styles.container}>
         <div className={styles.footer_inner}>
           <p className={styles.footer_text}>
-            ediktuyutyunnik@gmail.com | @2022
+            ediktuytyunnik@gmail.com | @2022
           </p>
         </div>
       </div>
