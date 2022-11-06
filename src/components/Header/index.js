@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +15,16 @@ const { THEMES } = CONSTANTS;
 
 const Header = () => {
   const themes = useSelector((state) => state.themes.themes);
+  const [isActiveMenu, setIsActiveMenu] = useState(false);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isActiveMenu) {
+      document.querySelector("body").classList.add("lock");
+    } else {
+      document.querySelector("body").classList.remove("lock");
+    }
+  }, [isActiveMenu]);
 
   const stylesHeader = cx(
     styles.header,
@@ -29,12 +38,19 @@ const Header = () => {
     }
   );
 
+  const stylesBurger = cx(styles.header_burger, {
+    [styles.header_burger_active]: isActiveMenu,
+  });
+
   return (
     <header className={stylesHeader}>
       <div className={styles.container}>
         <div className={styles.header_inner}>
           <Logo />
-          <Navigation />
+          <Navigation
+            isActiveMenu={isActiveMenu}
+            setIsActiveMenu={setIsActiveMenu}
+          />
           <div
             className={styles.box_theme}
             onClick={() => dispatch(setTheme())}
@@ -44,6 +60,12 @@ const Header = () => {
             ) : (
               <WbSunnyIcon className={styles.btn_theme} />
             )}
+          </div>
+          <div
+            className={stylesBurger}
+            onClick={() => setIsActiveMenu(!isActiveMenu)}
+          >
+            <span></span>
           </div>
         </div>
       </div>

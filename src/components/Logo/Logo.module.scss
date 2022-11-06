@@ -2,6 +2,10 @@
 @import "../../common/styles/template";
 
 .logo {
+  position: relative;
+
+  z-index: 3;
+  
   font-weight: 700;
   font-size: 30px;
   line-height: 1.2em;
