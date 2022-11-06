@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 import styles from "./Logo.module.scss";
 
-const Logo = () => {
+const Logo = ({ setIsActiveMenu }) => {
   return (
-    <Link className={styles.logo} to="/">
+    <Link className={styles.logo} to="/" onClick={() => setIsActiveMenu(false)}>
       Logo
     </Link>
   );

@@ -46,7 +46,7 @@ const Header = () => {
     <header className={stylesHeader}>
       <div className={styles.container}>
         <div className={styles.header_inner}>
-          <Logo />
+          <Logo setIsActiveMenu={setIsActiveMenu} />
           <Navigation
             isActiveMenu={isActiveMenu}
             setIsActiveMenu={setIsActiveMenu}
